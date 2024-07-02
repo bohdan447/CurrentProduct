@@ -1,0 +1,20 @@
+<?php
+/** @var \Perspective\CurrentProduct\ViewModel\CurrentViewModel  $viewmodel */
+?>
+
+<?php
+// Check if there is a current product and display its details
+if ($currentProduct = $block->getCurrentProduct()) {
+    echo $currentProduct->getName() . '<br />';
+    echo $currentProduct->getSku() . '<br />';
+    echo $currentProduct->getFinalPrice() . '<br />';
+    echo $currentProduct->getProductUrl() . '<br />';
+    print_r($currentProduct->getCategoryIds()) . '<br />';
+}
+
+// Check if there is a current category and display its details
+if ($currentCategory = $block->getCurrentCategory()) {
+    echo $currentCategory->getName() . '<br />';
+    echo $currentCategory->getUrl() . '<br />';
+}
+?>
